@@ -33,7 +33,9 @@
 			var cubeGeo, cubeMaterial;
 
 			var objects = [];
-
+			var x = 700;
+			var y = 800;
+			var z = 1300;
 			init();
 			render();
 
@@ -51,7 +53,7 @@
 				info.innerHTML = "Tab to the dropdown to change the block type<br><strong>click</strong>: add voxel, <strong>shift + click</strong>: remove voxel<br><select onchange='setImage()' id='blk'><option value='log'>log</option><option value='grass'>grass</option><option value='dirt'>dirt</option><option value='leaves'>leaves</option><option value='stone'>stone</option></optgroup></select>";
 				container.appendChild( info );
 camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 10000 );
-camera.position.set( 500, 800, 1300 );
+camera.position.set( x,y,z );
 camera.lookAt(0,0,0)
 
 				
@@ -84,7 +86,7 @@ camera.lookAt(0,0,0)
 				var geometry = new THREE.PlaneBufferGeometry( 1000, 1000 );
 				geometry.rotateX( - Math.PI / 2 );
 
-				plane = new THREE.Mesh( geometry, new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader().load( "textures/grass.png" ) } ) );
+				plane = new THREE.Mesh( geometry, new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader().load( "textures/stone.png" ) } ) );
 				scene.add( plane );
 
 				objects.push( plane );
