@@ -20,12 +20,12 @@
 		<script src="js/three.js"></script>
 <script src="js/OrbitControls.js"></script>
 		<script src="js/Detector.js"></script>
-
+<script src="js/FlyControls.js"></script>
 		<script>
 			if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
 
 			var container;
-			var camera, scene, renderer;
+			var camera, scene, renderer, controls;
 			var plane, cube;
 			var mouse, raycaster, isShiftDown = false;
 
@@ -54,7 +54,8 @@ camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight
 camera.position.set( 500, 800, 1300 );
 camera.lookAt(0,0,0)
 
-		
+				
+			controls = new THREE.FlyControls(camera, renderer.domElement);
 				scene = new THREE.Scene();
 				scene.background = new THREE.Color( 0xf0f0f0 );
 
